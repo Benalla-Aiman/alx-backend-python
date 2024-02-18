@@ -1,14 +1,21 @@
 #!/usr/bin/env python3
-""" Module documentation """
-import asyncio
-import time
-
-wait_n = __import__("1-concurrent_coroutines").wait_n
+'''Task 12's module.
+'''
+from typing import List, Tuple
 
 
-def measure_time(n: int, max_delay: int) -> float:
-    """doc func"""
-    start = time.perf_counter()
-    asyncio.run(wait_n(n, max_delay))
-    end = time.perf_counter()
-    return (end - start) / n
+def zoom_array(lst: Tuple, factor: int = 2) -> List:
+    '''Creates multiple copies of items in a tuple.
+    '''
+    zoomed_in: List = [
+        item for item in lst
+        for i in range(int(factor))
+    ]
+    return zoomed_in
+
+
+array = (12, 72, 91)
+
+zoom_2x = zoom_array(array)
+
+zoom_3x = zoom_array(array, 3)
