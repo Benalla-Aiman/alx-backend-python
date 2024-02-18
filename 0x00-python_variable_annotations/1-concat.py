@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
+'''Task 1's module.
+'''
 
-safe_first_element =  __import__('100-safe_first_element').safe_first_element
 
-print(safe_first_element.__annotations__)
+def concat(str1: str, str2: str) -> str:
+    '''Concatenates two strings.
+    '''
+    return str1 + str2
